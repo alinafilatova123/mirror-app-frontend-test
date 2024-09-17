@@ -1,0 +1,23 @@
+.button {
+    color: #fff;
+    font-weight: 500;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+
+    @media (max-width: 1200px) {
+        padding: 12px;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.light {
+    background-color: rgba(244, 241, 208, 0.2431372549);
+}
+
+.dark {
+    background-color: #2F3030;
+}

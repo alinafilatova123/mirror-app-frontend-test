@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI";
+}
+
+body {
+  background-color: #2F3030;
+  margin: 0;
+  padding: 0;
+}

@@ -1,8 +1,9 @@
 import "normalize.css";
 import "./styles/index.css";
+import PostsPage from "@/pages/PostsPage";
 
 function App() {
-  return <h1>Hi dev!</h1>;
+  return <PostsPage/>
 }
 
 export default App;

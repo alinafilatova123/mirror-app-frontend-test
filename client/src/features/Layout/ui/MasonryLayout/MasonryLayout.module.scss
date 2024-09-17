@@ -1,0 +1,17 @@
+
+.masonry {
+  display: grid;
+  max-width: 1200px;
+  margin: 24px auto;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-gap: 10px;
+
+  &-item {
+    grid-row-end: span 14;
+    display: flex;
+  }
+
+  &-item:nth-child(2n) {
+    grid-row-end: span 20;
+  }
+}
