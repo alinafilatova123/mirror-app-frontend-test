@@ -10,7 +10,5 @@
 
     &-item {
         display: flex;
-        grid-column: span var(--col-span);
-        grid-row: span var(--row-span);
     }
 }
