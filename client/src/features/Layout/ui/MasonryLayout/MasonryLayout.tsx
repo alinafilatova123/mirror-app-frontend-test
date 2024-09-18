@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { memo } from "react";
+import { FC, memo } from "react";
 
 import Post from "@/entities/post"
 import styles from './MasonryLayout.module.scss'
@@ -14,7 +14,7 @@ interface Props {
     };
 };
 
-const MasonryLayout = ({templateType, posts, structure}: Props) => {
+const MasonryLayout: FC<Props> = ({templateType, posts, structure}) => {
 
     return (
         <div

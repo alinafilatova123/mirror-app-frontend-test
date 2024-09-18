@@ -3,25 +3,22 @@ import { getPosts } from '@/shared/api';
 import { PostI } from '../../shared/interfaces';
 
 class PostsStore {
-    posts: PostI[] = []
-    loading = false
+    posts: PostI[] = [];
 
     constructor() {
-        makeAutoObservable(this)
-    }
+        makeAutoObservable(this);
+    };
 
     getPostsAction = async () => {
         try {
-            this.loading = true
-            const res = await getPosts()
+            const res = await getPosts();
             runInAction(() => {
-                this.posts = res
-                this.loading = false
+                this.posts = res;
             })
-        } catch {
-            this.loading = false
+        } catch (err) {
+            throw err;
         }
-    }
-}
+    };
+};
 
 export default new PostsStore();

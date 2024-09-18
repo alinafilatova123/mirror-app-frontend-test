@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { FC, memo } from "react";
 
 import { PostI } from "@/shared/interfaces";
 import GridLayout from "./GridLayout";
@@ -14,7 +14,7 @@ interface Props {
     };
 };
 
-const Layout = ({layoutType='default', ...props}: Props) => {
+const Layout: FC<Props> = ({layoutType='default', ...props}) => {
     return (
         <>
             {(layoutType === 'grid' || layoutType === 'default') && <GridLayout {...props}/>}

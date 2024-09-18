@@ -1,6 +1,7 @@
+import { makeAutoObservable, runInAction } from "mobx";
+
 import { getLayoutSettings } from "@/shared/api";
 import { LayoutI } from "@/shared/interfaces";
-import { makeAutoObservable, runInAction } from "mobx";
 
 class LayoutStore {
     layoutSettings = {
@@ -20,7 +21,6 @@ class LayoutStore {
         template: '',
         navigation: ''
     } as LayoutI
-    loading = false
 
     constructor() {
         makeAutoObservable(this)
@@ -28,14 +28,12 @@ class LayoutStore {
 
     getLayoutAction = async () => {
         try {
-            this.loading = true;
             const res = await getLayoutSettings();
             runInAction(() => {
                 this.layoutSettings = res;
-                this.loading = false;
             })
-        } catch {
-            this.loading = false;
+        } catch (err) {
+            throw err;
         };
     };
 };

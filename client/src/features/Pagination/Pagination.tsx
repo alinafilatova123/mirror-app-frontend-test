@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { FC } from "react";
 
 import { usePagination, DOTS } from "@/shared/hooks";
 import shevronLeftIcon from '../../shared/assets/icons/shevron-left.svg';
@@ -10,12 +11,12 @@ interface Props {
   onPageChange: (page: number) => void,
   totalCount: number,
   siblingCount?: number,
-  currentPage: number;
-  pageSize: number;
+  currentPage: number,
+  pageSize: number,
   className: string
-}
+};
 
-const Pagination = (props: Props) => {
+const Pagination: FC<Props> = (props) => {
   const {
     onPageChange,
     totalCount,

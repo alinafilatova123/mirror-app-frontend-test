@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { memo, useEffect, useState } from "react";
+import { FC, memo, useEffect, useState } from "react";
 
 import postsStore from "../../../../app/model/postsDataStore";
 import { LayoutI, PostI } from '../../../../shared/interfaces'
@@ -12,7 +12,7 @@ interface Props {
     layoutSettings: LayoutI
 }
 
-const Posts = observer(({layoutSettings}: Props) => {
+const Posts: FC<Props> = observer(({layoutSettings}) => {
 
     const {posts, getPostsAction} = postsStore;
     

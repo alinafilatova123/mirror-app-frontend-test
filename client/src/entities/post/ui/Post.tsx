@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { FC, memo } from 'react';
 
 import {PostI} from '../../../shared/interfaces';
 import likeIconFill from '../../../shared/assets/icons/like-fill.svg'
@@ -13,12 +13,12 @@ import styles from './Post.module.scss';
 interface Props {
     type?: string,
     post: PostI
-}
+};
 
-const Post = ({type='classic', post}: Props) => {
-    const likeIcon = type === 'classic' ? likeIconFill : likeIconLine
-    const commentIcon = type === 'classic' ? commentIconFill : commentIconLine
-    const date = getDate(new Date(post.date))
+const Post: FC<Props> = ({type='classic', post}) => {
+    const likeIcon = type === 'classic' ? likeIconFill : likeIconLine;
+    const commentIcon = type === 'classic' ? commentIconFill : commentIconLine;
+    const date = getDate(new Date(post.date));
       
     return (
         <div className={styles[type]}>

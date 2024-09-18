@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { FC, memo } from "react";
 
 import Post from "@/entities/post/ui/Post";
 import { PostI } from "@/shared/interfaces";
@@ -14,7 +14,7 @@ interface Props {
     }
 }
 
-const GridLayout = ({posts, templateType, structure}: Props) => {
+const GridLayout: FC<Props> = ({posts, templateType, structure}) => {
     return (
         <div
             style={{

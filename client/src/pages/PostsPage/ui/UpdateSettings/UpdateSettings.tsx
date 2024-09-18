@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite';
-import { memo, useEffect, useState } from 'react';
+import { FC, memo, useEffect, useState } from 'react';
 
 import layoutStore from '@/app/model/layoutDataStore';
 import Button from '../../../../shared/ui/Button';
@@ -16,7 +16,7 @@ interface SettingI {
     val: string | number
 }
 
-const UpdateSettings = observer(({layoutSettings}: Props) => {
+const UpdateSettings: FC<Props> = observer(({layoutSettings}) => {
     const {getLayoutAction} = layoutStore
     const [settings, setSettings] = useState<SettingI[]>([])
 
